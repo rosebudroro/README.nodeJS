@@ -1,6 +1,5 @@
 
-// TODO: Create a function that returns the license badge & link
-// If there is no license, return an empty string
+// Function that returns the license badge & link
 function renderLicenseBadge(license) {
   if (license === 'ISC') {
     return `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
@@ -16,7 +15,7 @@ function renderLicenseBadge(license) {
 }
 
 
-// TODO: Create a function to generate markdown for README
+// TODO: Create a function to generate markdown for README with appropriate data
 function generateMarkdown(data) {
   return `# ${data.title}
   ${renderLicenseBadge(data.license)}
