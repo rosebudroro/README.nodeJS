@@ -3,8 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require("./utils/generateMarkdown.js")
 
-// TODO: Create an array of questions for user input
-const questions = [];
+// // TODO: Create an array of questions for user input
+// const questions = [];
 
 inquirer
   .prompt([
@@ -42,7 +42,7 @@ inquirer
       type: 'list',
       message: 'Please choose a license for your project.',
       name: 'license',
-      choices: ['ISC', 'Microsoft Public License', 'MIT', 'Mozilla Public License 2.0'],
+      choices: ['ISC', 'MIT', 'Mozilla Public License 2.0'],
     },
     {
       type: 'input',
@@ -58,8 +58,6 @@ inquirer
   // TODO: Create a function to write README file
   .then((response) => {
     console.log(response) // sanity check
-    // const jsonFile = `${response.name}`
-    // const readMe = readmeFile(response);
     const fakeMd = generateMarkdown(response)
     fs.writeFile('README.md', fakeMd, (err) =>
       err ? console.error(err) : console.log('Success!')
